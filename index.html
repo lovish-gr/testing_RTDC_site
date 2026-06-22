@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>CRAFZAN — Where Rajasthan's Heritage Comes to Delhi</title>
+<meta name="description" content="Crafzan · Rajasthan Textile Development Store, New Delhi. Handloom weaves, Bandhej, block-print, blue pottery, Kundan and carpets — the living crafts of Rajasthan, curated under one roof since 1999." />
+<meta name="theme-color" content="#0D3A35" />
+<meta property="og:title" content="CRAFZAN — Rajasthan Textile Development Store" />
+<meta property="og:description" content="The living crafts of Rajasthan, curated in the heart of New Delhi since 1999." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Store","name":"Crafzan — Rajasthan Textile Development Store",
+  "image":"","priceRange":"$$","telephone":"+91-11-29536315","foundingDate":"1999",
+  "founder":{"@type":"Person","name":"Rahul Gupta"},
+  "address":{"@type":"PostalAddress","streetAddress":"275, West End Marg, M.B. Road, Opposite CISF Camp, Said-Ul-Ajaib, Mehrauli","addressLocality":"New Delhi","postalCode":"110030","addressCountry":"IN"},
+  "openingHours":"Mo-Su 10:30-20:00",
+  "department":[
+    {"@type":"Store","name":"Delhi Haat Cottage Emporium / The Heritage Mall","telephone":"+91-11-23582068","address":{"@type":"PostalAddress","streetAddress":"47/51, Pillar No. 7, Panchkuian Road, Near R.K. Ashram Metro Station","addressLocality":"New Delhi","postalCode":"110001","addressCountry":"IN"}},
+    {"@type":"Store","name":"Delhi Haat Craft Cottage Industries","telephone":"+91-11-42648384","address":{"@type":"PostalAddress","streetAddress":"95, Shamboo Dayal Bagh, Old Ishwar Nagar, Near Okhla N.S.I.C Metro Station, Okhla","addressLocality":"New Delhi","postalCode":"110020","addressCountry":"IN"}}
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#0D3A35; --ink-2:#0a2e2a; --ink-3:#072420;
+  --emerald:#276152; --sage:#B1B7AB; --cream:#FBF6F0;
+  --gold:#C8A24A; --gold-soft:#E3CC8F; --gold-deep:#A87E2E;
+  --cream-70:rgba(251,246,240,.70); --cream-50:rgba(251,246,240,.50); --cream-30:rgba(251,246,240,.28);
+  --ink-70:rgba(13,58,53,.70); --ink-50:rgba(13,58,53,.5);
+  --glass:rgba(251,246,240,.05); --glass-2:rgba(251,246,240,.08);
+  --glass-line:rgba(227,204,143,.22);
+  --shadow:0 40px 90px -34px rgba(0,0,0,.7);
+  --shadow-soft:0 24px 60px -30px rgba(7,36,32,.55);
+  --display:"Bodoni Moda",Georgia,serif; --body:"Jost",system-ui,sans-serif; --script:"Pinyon Script",cursive;
+  --ease:cubic-bezier(.22,.7,.2,1);
+  --maxw:1280px;
+  /* spacing scale */
+  --section-y:clamp(76px,10vw,148px);
+  /* z-index system: deco < content < raised < float < nav < menu < burger < curtain < loader < cursor */
+  --z-deco:0; --z-content:1; --z-raised:2; --z-float:60; --z-nav:100; --z-menu:105; --z-burger:110; --z-curtain:900; --z-loader:1000; --z-cursor:2000;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:hidden}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+body{
+  font-family:var(--body); background:var(--ink); color:var(--cream);
+  line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body.loading{overflow:hidden;height:100svh}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--ink)}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.serif{font-family:var(--display)}
+
+/* ---------- focus / a11y ---------- */
+:focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px;border-radius:2px}
+
+/* ---------- CUSTOM CURSOR ---------- */
+.cursor,.cursor-dot{position:fixed;top:0;left:0;z-index:var(--z-cursor);pointer-events:none;mix-blend-mode:difference;will-change:transform}
+.cursor{width:38px;height:38px;border:1px solid var(--gold-soft);border-radius:50%;transform:translate(-50%,-50%);transition:width .35s var(--ease),height .35s var(--ease),background .35s var(--ease),opacity .3s}
+.cursor-dot{width:5px;height:5px;background:var(--gold-soft);border-radius:50%;transform:translate(-50%,-50%)}
+body.cursor-hover .cursor{width:64px;height:64px;background:rgba(227,204,143,.12)}
+@media(hover:none),(pointer:coarse){.cursor,.cursor-dot{display:none}}
+
+/* ---------- PRELOADER ---------- */
+#loader{position:fixed;inset:0;min-height:100svh;z-index:var(--z-loader);background:var(--ink-3);display:flex;align-items:center;justify-content:center;flex-direction:column}
+#loader .weave{width:min(380px,72vw)}
+#loader .weave path,#loader .weave line{stroke:var(--gold-soft);fill:none}
+#loader .pct{font-family:var(--display);font-size:13px;letter-spacing:.4em;color:var(--gold-soft);margin-top:26px;opacity:.7}
+.curtain{position:fixed;inset:0;min-height:100svh;z-index:var(--z-curtain);background:linear-gradient(var(--ink-2),var(--ink-3));transform:translateY(0)}
+
+/* ---------- NAV ---------- */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:var(--z-nav);display:flex;align-items:center;justify-content:space-between;
+  padding:clamp(16px,2.4vw,26px) clamp(20px,4vw,56px);transition:padding .5s var(--ease),background .5s var(--ease)}
+header.nav.scrolled{padding-top:14px;padding-bottom:14px;background:rgba(10,46,42,.55);backdrop-filter:blur(16px) saturate(1.1);-webkit-backdrop-filter:blur(16px) saturate(1.1);box-shadow:0 1px 0 var(--glass-line)}
+.brandmark{display:flex;align-items:center;gap:16px}
+.logo-full{height:clamp(38px,3.4vw,52px);width:auto;display:block}
+.logo-compact{height:42px;display:none}
+.brandmark .txt{display:flex;flex-direction:column;line-height:1.1;padding-left:16px;border-left:1px solid var(--glass-line)}
+.brandmark .name{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.34em;color:var(--cream)}
+.brandmark .sub{font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--sage);margin-top:4px}
+.navlinks{display:flex;align-items:center;gap:clamp(18px,2.4vw,38px)}
+.navlinks a{font-size:13.5px;letter-spacing:.04em;color:var(--cream);opacity:.82;position:relative;padding:6px 0}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold-soft);transition:width .4s var(--ease)}
+.navlinks a:hover{opacity:1}.navlinks a:hover::after{width:100%}
+.nav-cta{border:1px solid var(--glass-line);border-radius:40px;padding:10px 22px !important;color:var(--gold-soft) !important;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s}
+.nav-cta::after{display:none}
+.nav-cta:hover{background:var(--gold-soft);color:var(--ink) !important;border-color:var(--gold-soft)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:var(--z-burger)}
+.burger span{width:26px;height:1.5px;background:var(--cream);transition:.4s var(--ease)}
+body.menu-open .burger span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+body.menu-open .burger span:nth-child(2){opacity:0}
+body.menu-open .burger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* ---------- shared bits ---------- */
+.eyebrow{display:inline-flex;align-items:center;gap:.8em;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-soft);font-weight:500}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--gold-soft);opacity:.7}
+.eyebrow.center::before{display:none}
+.mask{overflow:hidden;display:block}
+.mask>*{display:block;will-change:transform}
+/* word reveal for [data-lines] headings — inline so words flow and wrap normally */
+.wmask{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.wln{display:inline-block;will-change:transform}
+.btn{position:relative;display:inline-flex;align-items:center;gap:11px;padding:16px 32px;border-radius:44px;font-size:14px;letter-spacing:.04em;font-weight:500;overflow:hidden;transition:box-shadow .5s var(--ease)}
+.btn span{position:relative;z-index:2;display:inline-flex;align-items:center;gap:11px}
+.btn-gold{background:var(--gold);color:var(--ink);font-weight:600}
+.btn-gold::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,var(--gold-soft),var(--gold));transform:translateX(-101%);transition:transform .6s var(--ease);z-index:1}
+.btn-gold:hover::before{transform:translateX(0)}
+.btn-gold:hover{box-shadow:0 18px 44px -14px rgba(200,162,74,.6)}
+.btn-ghost{border:1px solid var(--glass-line);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--gold-soft);color:var(--gold-soft)}
+.magnetic{will-change:transform}
+
+/* ===================================================== HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:var(--ink-3)}
+#cloth{position:absolute;inset:0;width:100%;height:100%}
+.hero-grain{position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
+  background:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:3px 3px}
+.hero-veil{position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(120% 90% at 12% 50%,rgba(7,36,32,.55),transparent 55%),
+  linear-gradient(90deg,rgba(7,36,32,.82) 0%,rgba(7,36,32,.30) 46%,transparent 72%),
+  linear-gradient(0deg,rgba(7,36,32,.8),transparent 30%)}
+.hero-inner{position:relative;z-index:var(--z-raised);width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.hero .eyebrow{color:var(--gold-soft)}
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(42px,8.2vw,128px);line-height:.96;letter-spacing:-.015em;margin:24px 0 0;max-width:16ch}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--gold-soft)}
+.hero .lede{color:var(--sage);font-size:clamp(15px,1.45vw,19px);font-weight:300;max-width:48ch;margin-top:28px}
+.hero-actions{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap}
+.hero-chip{position:absolute;right:clamp(20px,4vw,56px);bottom:14%;z-index:var(--z-raised);width:min(280px,80vw);
+  background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--glass-line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+.hero-chip .k{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft)}
+.hero-chip .v{font-family:var(--display);font-size:30px;font-weight:600;margin-top:8px;line-height:1}
+.hero-chip .v small{font-size:14px;color:var(--sage)}
+.hero-chip .rule{height:1px;background:var(--glass-line);margin:16px 0}
+.hero-chip p{font-size:13px;color:var(--cream-70)}
+.scrollcue{position:absolute;left:clamp(20px,4vw,56px);bottom:30px;z-index:var(--z-raised);display:flex;align-items:center;gap:14px;color:var(--sage);font-size:11px;letter-spacing:.3em;text-transform:uppercase}
+.scrollcue .ln{width:46px;height:1px;background:linear-gradient(90deg,var(--gold-soft),transparent);position:relative;overflow:hidden}
+.scrollcue .ln::after{content:"";position:absolute;inset:0;background:var(--gold-soft);animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+
+/* ===================================================== THREAD MARQUEE */
+.thread{position:relative;background:var(--emerald);overflow:hidden;border-block:1px solid var(--gold);padding:0}
+.thread .track{display:flex;white-space:nowrap;will-change:transform}
+.thread span{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(18px,2.4vw,30px);color:var(--cream);padding:18px 30px;display:inline-flex;align-items:center;gap:30px}
+.thread span::after{content:"✦";font-style:normal;font-size:11px;color:var(--gold-soft)}
+
+/* ===================================================== HERITAGE (asymmetric split) */
+.heritage{position:relative;padding:var(--section-y) 0;background:linear-gradient(180deg,var(--ink-3),var(--ink-2))}
+.heritage .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,110px);align-items:center}
+.heritage .left{position:relative;min-width:0}
+.estblock{position:relative;min-width:0}
+.estblock .big{font-family:var(--display);font-weight:700;font-size:clamp(88px,16vw,240px);line-height:.82;background:linear-gradient(180deg,var(--gold-soft),var(--gold-deep));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.02em}
+.estblock .vlabel{position:absolute;top:50%;right:-10px;transform:translateY(-50%) rotate(90deg);transform-origin:right center;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--sage)}
+.estblock .since{font-family:var(--script);font-size:clamp(34px,5vw,60px);color:var(--gold-soft);margin-top:-10px;margin-left:8px}
+.heritage .right h2{font-family:var(--display);font-weight:500;font-size:clamp(28px,3.6vw,52px);line-height:1.06;letter-spacing:-.01em;margin:18px 0 0}
+.heritage .right p{color:var(--cream-70);margin-top:20px;font-size:16.5px;font-weight:300;max-width:52ch}
+.statrow{display:flex;gap:14px;margin-top:42px;flex-wrap:wrap}
+.statrow .s{flex:1;min-width:128px;padding:18px 20px;border-radius:16px;background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(10px)}
+.statrow .s b{font-family:var(--display);font-size:38px;font-weight:600;display:block;line-height:1;color:var(--gold-soft)}
+.statrow .s span{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-top:10px;display:block}
+
+/* ===================================================== MANIFESTO (type statement) */
+.manifesto{position:relative;padding:calc(var(--section-y) * 1.25) 0;text-align:center;background:var(--ink-2);overflow:hidden}
+.manifesto .glowmesh{position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(40% 50% at 30% 40%,rgba(39,97,82,.55),transparent 70%),
+  radial-gradient(35% 45% at 72% 60%,rgba(200,162,74,.14),transparent 70%)}
+.manifesto h2{position:relative;font-family:var(--display);font-weight:500;font-size:clamp(34px,6.6vw,104px);line-height:1.02;letter-spacing:-.02em;max-width:16ch;margin:0 auto}
+.manifesto h2 em{font-style:italic;color:var(--gold-soft)}
+.manifesto .sub{position:relative;color:var(--cream-50);margin-top:30px;letter-spacing:.16em;text-transform:uppercase;font-size:12px}
+
+/* ===================================================== COLLECTIONS REEL (horizontal pin) */
+.reel{position:relative;background:var(--ink-3)}
+.reel-head{padding:var(--section-y) 0 0}
+.reel-head h2{font-family:var(--display);font-weight:500;font-size:clamp(30px,4.6vw,64px);line-height:1.02;margin-top:16px}
+.reel-head p{color:var(--cream-70);max-width:54ch;margin-top:16px;font-weight:300}
+.reel-track-wrap{position:relative;overflow:hidden}
+.reel-track{display:flex;gap:clamp(20px,2.4vw,40px);width:max-content;padding:clamp(40px,5vw,72px) clamp(20px,4vw,56px);will-change:transform}
+.reel-track-wrap.scrollable{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+.reel-track-wrap.scrollable .reel-track{width:max-content}
+.reel-track-wrap.scrollable .panel{scroll-snap-align:center}
+.panel{position:relative;flex:0 0 clamp(280px,42vw,560px);height:clamp(420px,72vh,720px);border-radius:22px;overflow:hidden;
+  box-shadow:var(--shadow);transform-style:preserve-3d;background:var(--ink-2)}
+.panel .art{position:absolute;inset:-4%;will-change:transform;transition:transform 1s var(--ease)}
+.panel:hover .art{transform:scale(1.07)}
+.panel .art svg{width:100%;height:100%;display:block}
+.panel .scrim{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(7,36,32,.2) 55%,rgba(7,36,32,.86) 100%)}
+.panel .cap{position:absolute;left:28px;right:28px;bottom:28px;z-index:var(--z-raised)}
+.panel .cap .num{font-family:var(--display);font-size:13px;letter-spacing:.3em;color:var(--gold-soft);opacity:.85}
+.panel .cap h3{font-family:var(--display);font-weight:600;font-size:clamp(26px,2.6vw,38px);line-height:1.02;margin-top:8px}
+.panel .cap p{font-size:13.5px;color:var(--cream-70);margin-top:10px;max-width:34ch;font-weight:300}
+.panel .glasstag{position:absolute;top:22px;left:22px;z-index:var(--z-raised);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);
+  background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(10px);padding:8px 14px;border-radius:30px}
+
+/* ===================================================== SERVICES (cursor-follow index) */
+.services{position:relative;padding:var(--section-y) 0;background:linear-gradient(180deg,var(--ink-3),var(--ink-2))}
+.services .head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:30px}
+.services .head h2{font-family:var(--display);font-weight:500;font-size:clamp(30px,4.6vw,64px);line-height:1;margin-top:14px}
+.svc-list{border-top:1px solid var(--glass-line)}
+.svc-row{position:relative;display:flex;align-items:center;gap:24px;padding:clamp(22px,2.8vw,40px) 4px;border-bottom:1px solid var(--glass-line);cursor:pointer;transition:padding-left .5s var(--ease)}
+.svc-row:hover{padding-left:24px}
+.svc-row .idx{font-family:var(--display);font-size:14px;color:var(--gold-soft);width:42px;flex:none;opacity:.7}
+.svc-row h4{font-family:var(--display);font-weight:500;font-size:clamp(24px,3.4vw,48px);line-height:1;transition:color .4s var(--ease);flex:1}
+.svc-row:hover h4{color:var(--gold-soft)}
+.svc-row .desc{font-size:14px;color:var(--cream-50);max-width:30ch;font-weight:300;display:none}
+@media(min-width:900px){.svc-row .desc{display:block}}
+.svc-row .arrow{font-size:20px;color:var(--gold-soft);opacity:0;transform:translateX(-10px);transition:.4s var(--ease)}
+.svc-row:hover .arrow{opacity:1;transform:none}
+#svc-preview{position:fixed;z-index:var(--z-float);width:300px;height:210px;border-radius:18px;overflow:hidden;pointer-events:none;
+  opacity:0;transform:translate(-50%,-50%) scale(.85);transition:opacity .4s var(--ease),transform .4s var(--ease);box-shadow:var(--shadow);border:1px solid var(--glass-line)}
+#svc-preview.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+#svc-preview .pv{position:absolute;inset:0;display:flex;align-items:flex-end;padding:18px}
+#svc-preview .pv span{font-family:var(--display);font-size:20px;color:var(--cream)}
+@media(hover:none),(pointer:coarse){#svc-preview{display:none}}
+
+/* ===================================================== WHY (glass tiles) */
+.why{position:relative;padding:var(--section-y) 0;background:var(--emerald);overflow:hidden}
+.why .mesh{position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(50% 60% at 80% 10%,rgba(13,58,53,.7),transparent 60%),
+  radial-gradient(45% 55% at 10% 90%,rgba(200,162,74,.16),transparent 60%)}
+.why .head{position:relative;max-width:760px}
+.why .head h2{font-family:var(--display);font-weight:500;font-size:clamp(30px,4.8vw,66px);line-height:1.02;margin-top:14px}
+.why .head p{color:rgba(251,246,240,.8);margin-top:18px;font-weight:300;font-size:17px}
+.why-grid{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:60px}
+.tile{position:relative;padding:clamp(28px,3vw,46px);border-radius:22px;background:var(--glass-2);border:1px solid var(--glass-line);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow-soft);overflow:hidden;transform-style:preserve-3d}
+.tile .mk{font-family:var(--display);font-size:22px;color:var(--ink);width:52px;height:52px;border-radius:50%;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;transform:translateZ(40px)}
+.tile h4{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.4vw,30px);margin-top:22px;transform:translateZ(26px)}
+.tile p{color:rgba(251,246,240,.78);margin-top:12px;font-size:15px;font-weight:300;transform:translateZ(16px)}
+.tile .glow{position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(227,204,143,.18),transparent 55%);opacity:0;transition:opacity .4s}
+.tile:hover .glow{opacity:1}
+
+/* ===================================================== LOCATION (floating glass map) */
+.location{position:relative;padding:var(--section-y) 0;background:linear-gradient(180deg,var(--ink-2),var(--ink-3))}
+.location .wrap{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(36px,5vw,80px);align-items:center}
+.location h2{font-family:var(--display);font-weight:500;font-size:clamp(30px,4.4vw,60px);line-height:1.02;margin-top:14px}
+.location .addr{color:var(--cream-70);font-size:17px;margin-top:20px;max-width:38ch;font-weight:300}
+.locrows{margin-top:30px;display:flex;flex-direction:column}
+.locrows .r{display:flex;gap:18px;padding:14px 0;border-bottom:1px solid var(--glass-line)}
+.locrows .r .k{width:118px;flex:none;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);padding-top:3px}
+.locrows .r .v{font-size:15.5px;color:var(--cream)}
+.loc-actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.mapcard{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--glass-line);box-shadow:var(--shadow);min-height:440px;transform-style:preserve-3d}
+.mapcard iframe{width:100%;height:100%;min-height:440px;border:0;display:block;filter:grayscale(.25) contrast(1.05)}
+.mapcard .pinlabel{position:absolute;top:20px;left:20px;z-index:var(--z-raised);background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(12px);
+  padding:12px 18px;border-radius:14px;font-size:12px;letter-spacing:.1em}
+.mapcard .pinlabel b{font-family:var(--display);color:var(--gold-soft);display:block;font-size:15px;margin-bottom:3px}
+.btn-line{border:1px solid var(--gold-soft);color:var(--gold-soft);background:transparent}
+.btn-line:hover{background:var(--gold-soft);color:var(--ink)}
+
+/* ===================================================== CONTACT */
+.contact{position:relative;padding:var(--section-y) 0;background:var(--ink-3)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start}
+.contact h2{font-family:var(--display);font-weight:500;font-size:clamp(30px,4.6vw,64px);line-height:1.02;margin-top:14px}
+.contact .lead{color:var(--cream-70);margin-top:18px;font-weight:300;font-size:17px;max-width:44ch}
+.form{background:var(--glass);border:1px solid var(--glass-line);border-radius:24px;padding:clamp(26px,3vw,42px);backdrop-filter:blur(14px);box-shadow:var(--shadow-soft)}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:9px}
+.field input,.field textarea,.field select{width:100%;background:rgba(251,246,240,.04);border:1px solid var(--glass-line);border-radius:12px;padding:14px 16px;color:var(--cream);font-family:var(--body);font-size:15px;transition:border-color .4s,background .4s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--gold-soft);background:rgba(251,246,240,.07)}
+.field textarea{resize:vertical;min-height:110px}
+.contact .side .ci{margin-bottom:26px;padding-bottom:26px;border-bottom:1px solid var(--glass-line)}
+.contact .side .ci:last-child{border-bottom:0}
+.contact .side .lk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft)}
+.contact .side .lv{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);margin-top:8px}
+.wa{display:inline-flex;align-items:center;gap:10px;background:#1f8a5a;color:#fff;padding:14px 24px;border-radius:40px;font-size:14px;font-weight:600;margin-top:12px;transition:transform .5s var(--ease)}
+.wa:hover{transform:translateY(-3px)}
+
+/* ===================================================== FOOTER */
+footer{position:relative;background:var(--ink-3);padding:var(--section-y) 0 40px;border-top:1px solid var(--glass-line)}
+.foot-top{display:grid;grid-template-columns:1.1fr 2fr;gap:clamp(40px,5vw,70px);padding-bottom:54px;border-bottom:1px solid var(--glass-line)}
+.foot-brand p{color:var(--sage);font-size:14px;margin-top:22px;max-width:32ch;font-weight:300}
+.foot-brand .director{margin-top:24px;font-size:12px;letter-spacing:.06em;color:var(--cream-50)}
+.foot-brand .director b{font-family:var(--display);font-size:18px;color:var(--gold-soft);display:block;font-weight:600}
+.stores{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.store .tag{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:12px}
+.store h5{font-family:var(--display);font-weight:600;font-size:18px;line-height:1.2}
+.store p{color:var(--sage);font-size:13px;margin-top:12px;line-height:1.55;font-weight:300}
+.store .ph{color:var(--gold-soft);font-size:13px;margin-top:10px;display:block}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:30px;color:var(--cream-50);font-size:13px}
+.foot-bottom a{color:var(--gold-soft)}
+
+/* ===================================================== RESPONSIVE */
+@media(max-width:1200px){
+  .hero-chip{display:none}
+}
+@media(max-width:1024px){
+  .location .wrap,.contact .wrap{grid-template-columns:1fr;gap:clamp(36px,5vw,52px)}
+  .why-grid{gap:18px}
+  .heritage .wrap{gap:clamp(32px,5vw,64px)}
+}
+@media(max-width:860px){
+  .navlinks{position:fixed;top:0;left:0;width:100%;height:100svh;background:var(--ink-3);flex-direction:column;justify-content:center;align-items:center;gap:30px;transform:translateY(-100%);opacity:0;visibility:hidden;transition:transform .55s var(--ease),opacity .4s var(--ease),visibility 0s linear .55s;z-index:var(--z-menu)}
+  .navlinks a{font-family:var(--display);font-size:30px;opacity:1}
+  body.menu-open .navlinks{transform:none;opacity:1;visibility:visible;transition:transform .55s var(--ease),opacity .4s var(--ease),visibility 0s}
+  .burger{display:flex}
+  .heritage .wrap{grid-template-columns:1fr;gap:50px}
+  .estblock .vlabel{display:none}
+  .why-grid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr;gap:40px}
+  .stores{grid-template-columns:1fr}
+  .panel{flex-basis:78vw;height:62vh}
+}
+@media(max-width:640px){
+  .logo-full{display:none}.logo-compact{display:block}
+  .brandmark .txt{padding-left:13px}.brandmark .name{font-size:13px;letter-spacing:.26em}
+  .hero-actions .btn,.loc-actions .btn{width:100%;justify-content:center}
+  .statrow{flex-direction:column}
+  .mapcard,.mapcard iframe{min-height:340px}
+}
+@media(max-width:380px){.brandmark .txt{display:none}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001s !important;transition-duration:.001s !important;scroll-behavior:auto !important}
+  .scrollcue .ln::after{display:none}
+}
+.reveal{opacity:0}
+</style>
+</head>
+<body class="loading">
+<noscript><style>#loader,.curtain{display:none!important}body.loading{overflow:auto!important;height:auto!important}.reveal{opacity:1!important}.hero [data-word]{transform:none!important}</style></noscript>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- PRELOADER -->
+<div id="loader">
+  <svg class="weave" viewBox="0 0 400 150" aria-label="Crafzan loading">
+    <!-- warp/weft threads draw, then RG forms -->
+    <g id="warp"></g>
+    <line id="w1" x1="40" y1="75" x2="360" y2="75" stroke-width="1"/>
+    <text id="lr" x="150" y="108" font-family="Bodoni Moda, serif" font-weight="700" font-size="84" fill="none" stroke="#E3CC8F" stroke-width="1">R</text>
+    <text id="lg" x="198" y="112" font-family="Bodoni Moda, serif" font-weight="700" font-size="92" fill="none" stroke="#E3CC8F" stroke-width="1">G</text>
+  </svg>
+  <div class="pct"><span id="pct">00</span> — WEAVING</div>
+</div>
+<div class="curtain" id="curtain" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a class="brandmark" href="#top" aria-label="Crafzan home" data-cursor>
+    <svg class="logo-full" viewBox="0 0 560 120" role="img" aria-label="Rahul Gupta, Director">
+      <defs><linearGradient id="foil" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#F0DCA0"/><stop offset=".35" stop-color="#E3CC8F"/><stop offset=".62" stop-color="#C8A24A"/><stop offset="1" stop-color="#A87E2E"/>
+      </linearGradient></defs>
+      <text x="6" y="68" font-family="Bodoni Moda, serif" font-size="15" letter-spacing="3.2" fill="url(#foil)">RAHUL GUPTA</text>
+      <line x1="150" y1="63" x2="206" y2="63" stroke="url(#foil)" stroke-width="1.3"/>
+      <text x="206" y="92" font-family="Bodoni Moda, serif" font-weight="700" font-size="84" fill="url(#foil)">R</text>
+      <text x="262" y="98" font-family="Bodoni Moda, serif" font-weight="700" font-size="96" fill="url(#foil)">G</text>
+      <line x1="346" y1="63" x2="402" y2="63" stroke="url(#foil)" stroke-width="1.3"/>
+      <text x="404" y="92" font-family="Pinyon Script, cursive" font-size="40" fill="url(#foil)">Director</text>
+    </svg>
+    <svg class="logo-compact" viewBox="0 0 150 120" role="img" aria-label="RG monogram">
+      <defs><linearGradient id="foilc" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#F0DCA0"/><stop offset=".35" stop-color="#E3CC8F"/><stop offset=".62" stop-color="#C8A24A"/><stop offset="1" stop-color="#A87E2E"/>
+      </linearGradient></defs>
+      <text x="6" y="92" font-family="Bodoni Moda, serif" font-weight="700" font-size="84" fill="url(#foilc)">R</text>
+      <text x="62" y="98" font-family="Bodoni Moda, serif" font-weight="700" font-size="96" fill="url(#foilc)">G</text>
+    </svg>
+    <span class="txt"><span class="name">CRAFZAN</span><span class="sub">Rajasthan Textile Dev. Store</span></span>
+  </a>
+  <nav class="navlinks" id="navlinks">
+    <a href="#heritage" data-cursor>Heritage</a>
+    <a href="#collections" data-cursor>Collections</a>
+    <a href="#services" data-cursor>Services</a>
+    <a href="#visit" data-cursor>Visit</a>
+    <a href="#contact" class="nav-cta" data-cursor>Enquire</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <canvas id="cloth"></canvas>
+  <div class="hero-grain"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-inner">
+    <span class="eyebrow reveal" data-fade>Est. 1999 · New Delhi</span>
+    <h1 class="hero-h1"><span class="mask"><span data-word>Where</span></span><span class="mask"><span data-word>Rajasthan's</span></span><span class="mask"><span data-word><em>heritage</em></span></span><span class="mask"><span data-word>comes to Delhi.</span></span></h1>
+    <p class="lede reveal" data-fade>Handloom weaves, Bandhej, Sanganeri block-print, blue pottery and Kundan — the living crafts of an entire state, gathered under one roof for twenty-five years.</p>
+    <div class="hero-actions reveal" data-fade>
+      <a href="#collections" class="btn btn-gold magnetic" data-cursor><span>Explore the collection</span></a>
+      <a href="#visit" class="btn btn-ghost magnetic" data-cursor><span>Visit the store →</span></a>
+    </div>
+  </div>
+  <aside class="hero-chip" data-parallax="0.05">
+    <div class="k">Trusted in Delhi</div>
+    <div class="v serif">4.8<small> / 5</small></div>
+    <div class="rule"></div>
+    <p>Rated across 4,284 reviews — a quarter-century of in-person trust near Saket.</p>
+  </aside>
+  <div class="scrollcue"><span class="ln"></span>Scroll to unfold</div>
+</section>
+
+<!-- THREAD MARQUEE -->
+<div class="thread" aria-hidden="true"><div class="track" id="thread">
+  <span>Bandhej</span><span>Leheriya</span><span>Gota Patti</span><span>Kota Doria</span><span>Blue Pottery</span><span>Zardozi</span><span>Kundan</span><span>Sanganeri</span><span>Jaipuri Razai</span><span>Meenakari</span>
+  <span>Bandhej</span><span>Leheriya</span><span>Gota Patti</span><span>Kota Doria</span><span>Blue Pottery</span><span>Zardozi</span><span>Kundan</span><span>Sanganeri</span><span>Jaipuri Razai</span><span>Meenakari</span>
+</div></div>
+
+<!-- HERITAGE -->
+<section class="heritage" id="heritage">
+  <div class="wrap">
+    <div class="left">
+      <div class="estblock">
+        <div class="big">1999</div>
+        <div class="vlabel">The year it began</div>
+        <div class="since reveal" data-fade>a quarter-century of craft</div>
+      </div>
+    </div>
+    <div class="right">
+      <span class="eyebrow reveal" data-fade>Our story</span>
+      <h2 class="reveal" data-lines>Founded on a belief that Rajasthan's artisans deserved a home in the capital.</h2>
+      <p class="reveal" data-fade>Mr. Rahul Gupta opened Crafzan — the Rajasthan Textile Development Store — to bring genuine regional craft to South Delhi. Today it stands near Saket as one of the city's most trusted destinations for authentic Rajasthani textile and handicraft.</p>
+      <p class="reveal" data-fade>Every saree, every hand-thrown piece of blue pottery, is sourced directly from the craft clusters of Jaipur, Sanganer, Bagru and Bikaner — depth and provenance that general emporiums rarely match.</p>
+      <div class="statrow">
+        <div class="s reveal" data-fade><b>25+</b><span>Years of legacy</span></div>
+        <div class="s reveal" data-fade><b>5</b><span>Worlds of craft</span></div>
+        <div class="s reveal" data-fade><b>Pan-India</b><span>Delivery &amp; export</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="glowmesh" data-parallax="0.06"></div>
+  <h2 data-fade class="reveal">One roof. A thousand looms. <em>Twenty-five years</em> of trust.</h2>
+  <div class="sub reveal" data-fade>Where Rajasthan's heritage comes to Delhi</div>
+</section>
+
+<!-- COLLECTIONS REEL -->
+<section class="reel" id="collections">
+  <div class="reel-head wrap">
+    <span class="eyebrow reveal" data-fade>The collection</span>
+    <h2 class="reveal" data-lines>Five worlds, woven by hand.</h2>
+    <p class="reveal" data-fade>From the loom to the lapidary — drag or scroll sideways through each craft. Every piece is curated for origin and authenticity.</p>
+  </div>
+  <div class="reel-track-wrap">
+    <div class="reel-track" id="reelTrack">
+
+      <article class="panel" data-cursor>
+        <div class="art" data-depth="0.05">
+          <svg viewBox="0 0 560 720" preserveAspectRatio="xMidYMid slice"><defs>
+            <linearGradient id="bgA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f4a40"/><stop offset="1" stop-color="#072420"/></linearGradient>
+            <pattern id="bandhej" width="46" height="46" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+              <circle cx="23" cy="23" r="8" fill="none" stroke="#E3CC8F" stroke-width="1.1" opacity=".55"/><circle cx="23" cy="23" r="2.4" fill="#E3CC8F" opacity=".8"/></pattern></defs>
+            <rect width="560" height="720" fill="url(#bgA)"/><rect width="560" height="720" fill="url(#bandhej)"/>
+            <circle cx="420" cy="200" r="150" fill="none" stroke="#E3CC8F" stroke-width="1" opacity=".25"/>
+          </svg>
+        </div>
+        <div class="scrim"></div><div class="glasstag">Handloom</div>
+        <div class="cap"><div class="num serif">01 / 05</div><h3 class="serif">Textiles &amp; Fabrics</h3><p>Bandhej, Leheriya, Kota Doria, Sanganeri block-print, Pashmina shawls and Jaipuri razais.</p></div>
+      </article>
+
+      <article class="panel" data-cursor>
+        <div class="art" data-depth="0.05">
+          <svg viewBox="0 0 560 720" preserveAspectRatio="xMidYMid slice"><defs>
+            <linearGradient id="bgB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f6e5d"/><stop offset="1" stop-color="#0c3a34"/></linearGradient></defs>
+            <rect width="560" height="720" fill="url(#bgB)"/>
+            <g stroke="#E3CC8F" stroke-width="2" fill="none" opacity=".4">
+              <path d="M-40 80 Q140 0 320 80 T700 80"/><path d="M-40 180 Q140 100 320 180 T700 180"/><path d="M-40 280 Q140 200 320 280 T700 280"/>
+              <path d="M-40 380 Q140 300 320 380 T700 380"/><path d="M-40 480 Q140 400 320 480 T700 480"/><path d="M-40 580 Q140 500 320 580 T700 580"/></g>
+          </svg>
+        </div>
+        <div class="scrim"></div><div class="glasstag">Ethnic Wear</div>
+        <div class="cap"><div class="num serif">02 / 05</div><h3 class="serif">Ready-Made Attire</h3><p>Anarkalis, lehengas and kurtas for women; angarkha and Jodhpuri attire for men.</p></div>
+      </article>
+
+      <article class="panel" data-cursor>
+        <div class="art" data-depth="0.05">
+          <svg viewBox="0 0 560 720" preserveAspectRatio="xMidYMid slice"><defs>
+            <radialGradient id="bgC" cx="50%" cy="38%" r="75%"><stop offset="0" stop-color="#13524a"/><stop offset="1" stop-color="#061f1b"/></radialGradient></defs>
+            <rect width="560" height="720" fill="url(#bgC)"/>
+            <g transform="translate(280,250)" fill="none" stroke="#E3CC8F" opacity=".7">
+              <polygon points="0,-70 60,-20 38,55 -38,55 -60,-20" stroke-width="1.4"/><polygon points="0,-42 36,-12 22,33 -22,33 -36,-12" stroke-width="1"/>
+              <circle cx="0" cy="0" r="6" fill="#E3CC8F"/></g>
+            <g fill="#E3CC8F" opacity=".5"><circle cx="160" cy="430" r="4"/><circle cx="400" cy="470" r="4"/><circle cx="280" cy="540" r="5"/></g>
+          </svg>
+        </div>
+        <div class="scrim"></div><div class="glasstag">Fine Jewellery</div>
+        <div class="cap"><div class="num serif">03 / 05</div><h3 class="serif">Kundan &amp; Meenakari</h3><p>Kundan, Meenakari and Thewa sets, silver, oxidised pieces and traditional bangles.</p></div>
+      </article>
+
+      <article class="panel" data-cursor>
+        <div class="art" data-depth="0.05">
+          <svg viewBox="0 0 560 720" preserveAspectRatio="xMidYMid slice"><defs>
+            <linearGradient id="bgD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f4a43"/><stop offset="1" stop-color="#08312c"/></linearGradient></defs>
+            <rect width="560" height="720" fill="url(#bgD)"/>
+            <g transform="translate(280,300)" fill="none" stroke="#E3CC8F" opacity=".6" stroke-width="1.2">
+              <circle r="40"/><circle r="80"/><circle r="120"/><circle r="160"/>
+              <g opacity=".8"><path d="M0,-120 q30,40 0,80 q-30,-40 0,-80"/><path d="M0,40 q30,40 0,80 q-30,-40 0,-80"/>
+              <path d="M-120,0 q40,30 80,0 q-40,-30 -80,0"/><path d="M40,0 q40,30 80,0 q-40,-30 -80,0"/></g></g>
+          </svg>
+        </div>
+        <div class="scrim"></div><div class="glasstag">Home &amp; Décor</div>
+        <div class="cap"><div class="num serif">04 / 05</div><h3 class="serif">Blue Pottery &amp; Décor</h3><p>Jaipur blue pottery, brass and copper, miniature paintings and carved wooden décor.</p></div>
+      </article>
+
+      <article class="panel" data-cursor>
+        <div class="art" data-depth="0.05">
+          <svg viewBox="0 0 560 720" preserveAspectRatio="xMidYMid slice"><defs>
+            <linearGradient id="bgE" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2c6557"/><stop offset="1" stop-color="#0a332e"/></linearGradient>
+            <pattern id="weave" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M0 0 H40 M0 20 H40 M20 0 V40 M0 0 V40" stroke="#E3CC8F" stroke-width="1" opacity=".35"/>
+              <rect x="2" y="2" width="16" height="16" fill="#E3CC8F" opacity=".08"/><rect x="22" y="22" width="16" height="16" fill="#E3CC8F" opacity=".08"/></pattern></defs>
+            <rect width="560" height="720" fill="url(#bgE)"/><rect width="560" height="720" fill="url(#weave)"/>
+          </svg>
+        </div>
+        <div class="scrim"></div><div class="glasstag">Floor &amp; Wall</div>
+        <div class="cap"><div class="num serif">05 / 05</div><h3 class="serif">Carpets &amp; Rugs</h3><p>Hand-woven carpets, dhurries and rugs from the looms of Jaipur and Bikaner.</p></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow reveal" data-fade>What we offer</span>
+        <h2 class="reveal" data-lines>More than a shop.</h2>
+      </div>
+      <p class="reveal" data-fade style="color:var(--cream-50);max-width:34ch;font-weight:300">Hover a service to preview. Every one is built around how Rajasthan's craft is bought, gifted and shipped.</p>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row" data-cursor data-pv="In-store" data-grad="linear-gradient(135deg,#0f4a40,#072420)"><span class="idx serif">01</span><h4 class="serif">In-Store Shopping</h4><span class="desc">A guided, multi-section showroom.</span><span class="arrow">↗</span></div>
+      <div class="svc-row" data-cursor data-pv="Delivery" data-grad="linear-gradient(135deg,#2f6e5d,#0c3a34)"><span class="idx serif">02</span><h4 class="serif">Home Delivery &amp; Parcel</h4><span class="desc">Pay in store, delivered across India.</span><span class="arrow">↗</span></div>
+      <div class="svc-row" data-cursor data-pv="Wholesale" data-grad="linear-gradient(135deg,#13524a,#061f1b)"><span class="idx serif">03</span><h4 class="serif">Bulk &amp; Wholesale</h4><span class="desc">B2B supply for traders &amp; exporters.</span><span class="arrow">↗</span></div>
+      <div class="svc-row" data-cursor data-pv="Bespoke" data-grad="linear-gradient(135deg,#0f4a43,#08312c)"><span class="idx serif">04</span><h4 class="serif">Made-to-Order</h4><span class="desc">Custom garments &amp; embroidery.</span><span class="arrow">↗</span></div>
+      <div class="svc-row" data-cursor data-pv="Export" data-grad="linear-gradient(135deg,#2c6557,#0a332e)"><span class="idx serif">05</span><h4 class="serif">Export Enquiries</h4><span class="desc">Carpets &amp; textiles for global buyers.</span><span class="arrow">↗</span></div>
+      <div class="svc-row" data-cursor data-pv="Gifting" data-grad="linear-gradient(135deg,#1a5a4d,#08302b)"><span class="idx serif">06</span><h4 class="serif">Gifting &amp; Vouchers</h4><span class="desc">Curated selections for first-time buyers.</span><span class="arrow">↗</span></div>
+    </div>
+  </div>
+</section>
+<div id="svc-preview" aria-hidden="true"><div class="pv"><span></span></div></div>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="mesh" data-parallax="0.05"></div>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal" data-fade style="color:var(--gold-soft)">Why Crafzan</span>
+      <h2 class="reveal" data-lines>The difference is in the provenance.</h2>
+      <p class="reveal" data-fade>A specialist's depth, an emporium's range, and authenticity you can trace back to the artisan.</p>
+    </div>
+    <div class="why-grid">
+      <div class="tile reveal" data-fade data-tilt><div class="glow"></div><span class="mk serif">✦</span><h4 class="serif">Rajasthan, exclusively</h4><p>Not a general handicraft store — a curated regional collection with genuine depth.</p></div>
+      <div class="tile reveal" data-fade data-tilt><div class="glow"></div><span class="mk serif">◈</span><h4 class="serif">Everything under one roof</h4><p>Textiles, attire, jewellery, décor and carpets — no need to visit five markets.</p></div>
+      <div class="tile reveal" data-fade data-tilt><div class="glow"></div><span class="mk serif">❖</span><h4 class="serif">Direct artisan sourcing</h4><p>Relationships since 1999 mean fair sourcing and transparent origins.</p></div>
+      <div class="tile reveal" data-fade data-tilt><div class="glow"></div><span class="mk serif">⊛</span><h4 class="serif">Pan-India &amp; export ready</h4><p>Parcel dispatch across India and export support for international buyers.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="visit">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow reveal" data-fade>Visit us</span>
+      <h2 class="reveal" data-lines>Find us near Saket.</h2>
+      <p class="addr reveal" data-fade>Plot No. 275, West End Marg, M.B. Road, Opposite CISF Camp, Said-Ul-Ajaib, Mehrauli, New Delhi – 110030.</p>
+      <div class="locrows">
+        <div class="r reveal" data-fade><span class="k">Metro</span><span class="v">Saket Station (Yellow Line) — walkable</span></div>
+        <div class="r reveal" data-fade><span class="k">Landmark</span><span class="v">Opposite CISF Camp, Said-Ul-Ajaib</span></div>
+        <div class="r reveal" data-fade><span class="k">Nearby</span><span class="v">Qutub Minar · Saket Mall · Hauz Khas</span></div>
+        <div class="r reveal" data-fade><span class="k">Hours</span><span class="v">Mon–Sun · 10:30 AM – 8:00 PM</span></div>
+      </div>
+      <div class="loc-actions">
+        <a class="btn btn-gold magnetic" data-cursor target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Rajasthan%20Textile%20Development%20Store%2C%20275%20West%20End%20Marg%2C%20MB%20Road%2C%20Said-Ul-Ajaib%2C%20New%20Delhi%20110030"><span>◎ Get directions</span></a>
+        <a class="btn btn-line magnetic" data-cursor target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rajasthan%20Textile%20Development%20Store%2C%20275%20West%20End%20Marg%2C%20MB%20Road%2C%20Said-Ul-Ajaib%2C%20New%20Delhi%20110030"><span>Open in Google Maps →</span></a>
+      </div>
+    </div>
+    <div class="mapcard reveal" data-fade data-tilt-soft>
+      <div class="pinlabel"><b>Crafzan — Flagship</b>275, West End Marg · New Delhi 110030</div>
+      <iframe title="Crafzan flagship location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=275%20West%20End%20Marg%20MB%20Road%20Said-Ul-Ajaib%20Saket%20New%20Delhi%20110030&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow reveal" data-fade>Enquire</span>
+      <h2 class="reveal" data-lines>Tell us what you're looking for.</h2>
+      <p class="lead reveal" data-fade>Retail, bulk orders and export enquiries are all welcome. Message on WhatsApp or send a note.</p>
+      <div class="side" style="margin-top:42px">
+        <div class="ci"><div class="lk">WhatsApp / Call</div><div class="lv serif"><a href="tel:+919990004888" data-cursor>+91 99900 04888</a></div>
+          <a class="wa" data-cursor href="https://wa.me/919990004888" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 3 4.7 4.2 1.7.7 2.3.8 3.1.7.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.2z"/></svg>
+            Chat on WhatsApp</a>
+        </div>
+        <div class="ci"><div class="lk">Store line</div><div class="lv serif"><a href="tel:+911129536315" data-cursor>+91-11-29536315</a></div></div>
+        <div class="ci"><div class="lk">Email</div><div class="lv serif"><a href="mailto:rahul.gupta@crafzan.com" data-cursor>rahul.gupta@crafzan.com</a></div></div>
+      </div>
+    </div>
+    <div class="form reveal" data-fade>
+      <div class="field"><label for="nm">Name</label><input id="nm" type="text" placeholder="Your name" /></div>
+      <div class="field"><label for="ph">Phone / WhatsApp</label><input id="ph" type="tel" placeholder="+91" /></div>
+      <div class="field"><label for="ty">Enquiry type</label><select id="ty"><option>Retail purchase</option><option>Bulk / Wholesale</option><option>Export enquiry</option><option>Made-to-order</option><option>Home delivery</option></select></div>
+      <div class="field"><label for="ms">Message</label><textarea id="ms" placeholder="What are you looking for?"></textarea></div>
+      <button class="btn btn-gold magnetic" id="sendBtn" type="button" data-cursor><span>Send enquiry</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brandmark">
+          <svg class="logo-full" viewBox="0 0 560 120" role="img" aria-label="Rahul Gupta, Director">
+            <defs><linearGradient id="foilf" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F0DCA0"/><stop offset=".35" stop-color="#E3CC8F"/><stop offset=".62" stop-color="#C8A24A"/><stop offset="1" stop-color="#A87E2E"/>
+            </linearGradient></defs>
+            <text x="6" y="68" font-family="Bodoni Moda, serif" font-size="15" letter-spacing="3.2" fill="url(#foilf)">RAHUL GUPTA</text>
+            <line x1="150" y1="63" x2="206" y2="63" stroke="url(#foilf)" stroke-width="1.3"/>
+            <text x="206" y="92" font-family="Bodoni Moda, serif" font-weight="700" font-size="84" fill="url(#foilf)">R</text>
+            <text x="262" y="98" font-family="Bodoni Moda, serif" font-weight="700" font-size="96" fill="url(#foilf)">G</text>
+            <line x1="346" y1="63" x2="402" y2="63" stroke="url(#foilf)" stroke-width="1.3"/>
+            <text x="404" y="92" font-family="Pinyon Script, cursive" font-size="40" fill="url(#foilf)">Director</text>
+          </svg>
+          <svg class="logo-compact" viewBox="0 0 150 120" role="img" aria-label="RG monogram">
+            <defs><linearGradient id="foilfc" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F0DCA0"/><stop offset=".35" stop-color="#E3CC8F"/><stop offset=".62" stop-color="#C8A24A"/><stop offset="1" stop-color="#A87E2E"/>
+            </linearGradient></defs>
+            <text x="6" y="92" font-family="Bodoni Moda, serif" font-weight="700" font-size="84" fill="url(#foilfc)">R</text>
+            <text x="62" y="98" font-family="Bodoni Moda, serif" font-weight="700" font-size="96" fill="url(#foilfc)">G</text>
+          </svg>
+        </div>
+        <p>Bringing the living crafts of Rajasthan to the heart of New Delhi since 1999.</p>
+        <div class="director">Proprietor &amp; Director<b>Rahul Gupta</b></div>
+      </div>
+      <div class="stores">
+        <div class="store"><div class="tag">Flagship · Saket</div><h5 class="serif">Rajasthan Textile Development Store</h5><p>275, West End Marg, Opp. CISF Camp, Said-Ul-Ajaib, M.B. Road, New Delhi – 110030</p><span class="ph">+91-11-29536315</span></div>
+        <div class="store"><div class="tag">Heritage Mall</div><h5 class="serif">Delhi Haat Cottage Emporium</h5><p>47/51, Pillar No. 7, Panchkuian Road, Near R.K. Ashram Metro Station, New Delhi – 110001</p><span class="ph">+91-11-23582068</span></div>
+        <div class="store"><div class="tag">Okhla</div><h5 class="serif">Delhi Haat Craft Cottage Industries</h5><p>95, Shamboo Dayal Bagh, Old Ishwar Nagar, Near Okhla N.S.I.C Metro Station, New Delhi – 110020</p><span class="ph">+91-11-42648384</span></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Crafzan · Rajasthan Textile Development Store. All rights reserved.</span>
+      <span>Designed &amp; developed by <a href="#" data-cursor rel="noopener">Sewakunj Technologies LLP</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- LIBS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const TOUCH = matchMedia('(hover:none),(pointer:coarse)').matches;
+const hasGSAP = !!window.gsap;
+if(hasGSAP && window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+if(hasGSAP && !RM){ gsap.set('.hero [data-word]',{yPercent:110}); gsap.set('.hero [data-fade]',{opacity:0,y:20}); }
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ---------------- PRELOADER ---------------- */
+(function(){
+  const loader = document.getElementById('loader');
+  const curtain = document.getElementById('curtain');
+  const pct = document.getElementById('pct');
+  const warp = document.getElementById('warp');
+  // build warp threads
+  let lines='';
+  for(let i=0;i<14;i++){const x=40+i*23; lines+=`<line x1="${x}" y1="30" x2="${x}" y2="120" stroke="#276152" stroke-width="1" opacity=".5"/>`;}
+  warp.innerHTML=lines;
+
+  function reveal(){
+    document.body.classList.remove('loading');
+    if(hasGSAP && !RM){
+      gsap.to(curtain,{yPercent:-100,duration:1.1,ease:'power4.inOut',onComplete:()=>{curtain.remove();}});
+      gsap.set(loader,{display:'none'});
+      heroIntro();
+    } else { loader.style.display='none'; curtain.remove(); document.querySelectorAll('.reveal').forEach(e=>e.style.opacity=1); document.querySelectorAll('[data-word]').forEach(e=>e.style.transform='none'); }
+    initAll();
+  }
+
+  if(hasGSAP && !RM){
+    const w1=document.getElementById('w1'), lr=document.getElementById('lr'), lg=document.getElementById('lg');
+    [lr,lg].forEach(t=>{const len=t.getComputedTextLength?420:420; t.style.strokeDasharray=300; t.style.strokeDashoffset=300;});
+    w1.style.strokeDasharray=340; w1.style.strokeDashoffset=340;
+    const counter={v:0};
+    const tl=gsap.timeline({onComplete:reveal});
+    tl.from('#warp line',{scaleY:0,transformOrigin:'center',stagger:.04,duration:.5,ease:'power2.out'})
+      .to('#w1',{strokeDashoffset:0,duration:.5,ease:'power2.inOut'},'-=.2')
+      .to(['#lr','#lg'],{strokeDashoffset:0,duration:.9,stagger:.15,ease:'power2.inOut'},'-=.1')
+      .to(['#lr','#lg'],{fill:'#E3CC8F',duration:.6,ease:'power1.out'},'-=.2')
+      .to(counter,{v:100,duration:1.8,ease:'power1.inOut',onUpdate:()=>pct.textContent=String(Math.round(counter.v)).padStart(2,'0')},0)
+      .to({},{duration:.25});
+  } else {
+    setTimeout(reveal, 300);
+  }
+  // safety
+  setTimeout(()=>{ if(document.body.classList.contains('loading')) reveal(); }, 6000);
+})();
+
+function heroIntro(){
+  const tl=gsap.timeline({defaults:{ease:'power4.out'}});
+  tl.to('.hero [data-word]',{yPercent:0,duration:1.1,stagger:.08},0)
+    .to('.hero [data-fade]',{opacity:1,y:0,duration:1,stagger:.12},'-=.7');
+}
+
+/* ---------------- MAIN INIT ---------------- */
+function initAll(){
+  /* reel: duplicate cards for a seamless loop, or enable swipe on touch/reduced-motion */
+  const reelTrack=document.getElementById('reelTrack');
+  const reelWrap=reelTrack?reelTrack.parentElement:null;
+  if(reelTrack){
+    if(!TOUCH && !RM){ [...reelTrack.children].forEach(n=>reelTrack.appendChild(n.cloneNode(true))); }
+    else if(reelWrap){ reelWrap.classList.add('scrollable'); }
+  }
+
+  /* Lenis smooth scroll */
+  let lenis=null;
+  if(window.Lenis && !RM){
+    lenis=new Lenis({lerp:.085,wheelMultiplier:1,smoothWheel:true});
+    lenis.on('scroll',()=>{ if(window.ScrollTrigger) ScrollTrigger.update(); });
+    gsap.ticker.add(t=>lenis.raf(t*1000)); gsap.ticker.lagSmoothing(0);
+    // anchor links via lenis
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{const id=a.getAttribute('href'); if(id.length>1){e.preventDefault(); const el=document.querySelector(id); if(el) lenis.scrollTo(el,{offset:-10,duration:1.4}); closeMenu();}});
+    });
+  }
+
+  /* nav state */
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('scrolled',scrollY>40);
+  addEventListener('scroll',onScroll); onScroll();
+
+  /* mobile menu */
+  const burger=document.getElementById('burger');
+  window.closeMenu=()=>document.body.classList.remove('menu-open');
+  burger.addEventListener('click',()=>document.body.classList.toggle('menu-open'));
+  document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',closeMenu));
+
+  /* custom cursor */
+  if(!TOUCH){
+    const cur=document.getElementById('cursor'), dot=document.getElementById('cursorDot');
+    let cx=innerWidth/2,cy=innerHeight/2,tx=cx,ty=cy;
+    addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;dot.style.transform=`translate(${tx}px,${ty}px) translate(-50%,-50%)`;});
+    (function loop(){cx+=(tx-cx)*.18;cy+=(ty-cy)*.18;cur.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;requestAnimationFrame(loop);})();
+    document.querySelectorAll('[data-cursor]').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));});
+  }
+
+  /* magnetic buttons */
+  if(!TOUCH && !RM){
+    const clamp=(v,m)=>Math.max(-m,Math.min(m,v));
+    document.querySelectorAll('.magnetic').forEach(el=>{
+      el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();
+        const mx=clamp(e.clientX-r.left-r.width/2,r.width*0.4);
+        const my=clamp(e.clientY-r.top-r.height/2,r.height*0.6);
+        gsap.to(el,{x:mx*.3,y:my*.4,duration:.5,ease:'power3.out'});});
+      el.addEventListener('mouseleave',()=>gsap.to(el,{x:0,y:0,duration:.45,ease:'power3.out'}));
+    });
+  }
+
+  /* scroll reveals */
+  if(!RM){
+    document.querySelectorAll('[data-fade]').forEach(el=>{
+      if(el.closest('.hero')) return;
+      gsap.fromTo(el,{opacity:0,y:30},{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+    });
+    // line/word reveals for headings
+    document.querySelectorAll('[data-lines]').forEach(h=>{
+      h.style.opacity=1;
+      const words=h.textContent.trim().split(' ');
+      h.innerHTML=words.map(w=>`<span class="wmask"><span class="wln">${w}</span></span>`).join(' ');
+      gsap.set(h.querySelectorAll('.wln'),{yPercent:110});
+      gsap.to(h.querySelectorAll('.wln'),{yPercent:0,duration:1,ease:'power4.out',stagger:.05,scrollTrigger:{trigger:h,start:'top 85%'}});
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(e=>e.style.opacity=1);
+  }
+
+  /* parallax layers */
+  if(!RM){
+    document.querySelectorAll('[data-parallax]').forEach(el=>{
+      const amt=parseFloat(el.dataset.parallax)*140;
+      gsap.to(el,{y:amt,ease:'none',scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:true}});
+    });
+  }
+
+  /* CONTINUOUS REEL LOOP */
+  if(reelTrack && !TOUCH && !RM){
+    let loop;
+    const build=()=>{
+      if(loop) loop.kill();
+      gsap.set(reelTrack,{x:0});
+      const half=reelTrack.children.length/2;            // first clone index
+      const w=reelTrack.children[half].offsetLeft;        // width of one full set incl. gap
+      if(w>0) loop=gsap.to(reelTrack,{x:-w,duration:Math.max(20,w/55),ease:'none',repeat:-1});
+    };
+    build();
+    reelTrack.addEventListener('mouseenter',()=>loop&&loop.pause());
+    reelTrack.addEventListener('mouseleave',()=>loop&&loop.resume());
+    let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(build,250);});
+  }
+
+  /* tilt cards */
+  if(!TOUCH && !RM){
+    document.querySelectorAll('[data-tilt]').forEach(card=>{
+      card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
+        card.style.setProperty('--mx',px*100+'%');card.style.setProperty('--my',py*100+'%');
+        gsap.to(card,{rotateY:(px-.5)*6,rotateX:(.5-py)*6,transformPerspective:900,duration:.5,ease:'power2.out'});});
+      card.addEventListener('mouseleave',()=>gsap.to(card,{rotateX:0,rotateY:0,duration:.7,ease:'power2.out'}));
+    });
+    document.querySelectorAll('[data-tilt-soft]').forEach(card=>{
+      card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
+        gsap.to(card,{rotateY:(px-.5)*5,rotateX:(.5-py)*5,transformPerspective:1100,duration:.6,ease:'power2.out'});});
+      card.addEventListener('mouseleave',()=>gsap.to(card,{rotateX:0,rotateY:0,duration:.8}));
+    });
+  }
+
+  /* SERVICES cursor-follow preview */
+  if(!TOUCH){
+    const pv=document.getElementById('svc-preview'), pvText=pv.querySelector('span');
+    let px=0,py=0,vx=0,vy=0,active=false;
+    document.querySelectorAll('.svc-row').forEach(row=>{
+      row.addEventListener('mouseenter',()=>{active=true;pv.classList.add('show');pv.style.background=row.dataset.grad;pvText.textContent=row.dataset.pv;});
+      row.addEventListener('mouseleave',()=>{active=false;pv.classList.remove('show');});
+    });
+    addEventListener('mousemove',e=>{px=e.clientX;py=e.clientY;});
+    (function pvLoop(){vx+=(px-vx)*.14;vy+=(py-vy)*.14;if(active)pv.style.left=vx+'px',pv.style.top=vy+'px';requestAnimationFrame(pvLoop);})();
+  }
+
+  /* thread marquee */
+  const thread=document.getElementById('thread');
+  if(thread && !RM){gsap.to(thread,{xPercent:-50,duration:34,ease:'none',repeat:-1});}
+
+  /* contact -> whatsapp */
+  document.getElementById('sendBtn').addEventListener('click',()=>{
+    const n=(document.getElementById('nm').value||'there').trim();
+    const t=document.getElementById('ty').value;
+    const m=document.getElementById('ms').value.trim();
+    const text=encodeURIComponent(`Hello Crafzan, this is ${n}. Enquiry: ${t}. ${m}`);
+    window.open(`https://wa.me/919990004888?text=${text}`,'_blank');
+  });
+
+  if(window.ScrollTrigger) ScrollTrigger.refresh();
+}
+
+/* ---------------- WEBGL CLOTH HERO ---------------- */
+(function(){
+  const canvas=document.getElementById('cloth');
+  if(!window.THREE) return;
+  let renderer; try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});}catch(e){return;}
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(40,1,0.1,100); camera.position.set(0,0,7.2);
+  const seg = innerWidth<700?90:170;
+  const geo=new THREE.PlaneGeometry(14,9.5,seg,Math.round(seg*0.7));
+  const u={uTime:{value:0},uMouse:{value:new THREE.Vector2()},
+    uDeep:{value:new THREE.Color(0x072420)},uMid:{value:new THREE.Color(0x276152)},uGold:{value:new THREE.Color(0xC8A24A)}};
+  const mat=new THREE.ShaderMaterial({uniforms:u,
+    vertexShader:`uniform float uTime;uniform vec2 uMouse;varying float vE;varying vec3 vN;varying vec2 vUv;
+    float w(vec2 p,float t){float e=0.;e+=sin(p.x*1.2+t*0.65)*0.46;e+=sin(p.y*1.6+t*0.9)*0.32;e+=sin((p.x+p.y)*0.9+t*0.5)*0.26;e+=sin((p.x*0.6-p.y*1.1)+t*1.1)*0.17;return e;}
+    void main(){vUv=uv;vec3 pos=position;vec2 o=uMouse*0.9;float e=w(pos.xy+o,uTime);pos.z+=e;vE=e;float ep=0.06;
+    float ex=w(pos.xy+vec2(ep,0.)+o,uTime)-w(pos.xy-vec2(ep,0.)+o,uTime);float ey=w(pos.xy+vec2(0.,ep)+o,uTime)-w(pos.xy-vec2(0.,ep)+o,uTime);
+    vN=normalize(vec3(-ex/(2.*ep),-ey/(2.*ep),1.));gl_Position=projectionMatrix*modelViewMatrix*vec4(pos,1.);}`,
+    fragmentShader:`precision highp float;uniform vec3 uDeep;uniform vec3 uMid;uniform vec3 uGold;uniform float uTime;varying float vE;varying vec3 vN;varying vec2 vUv;
+    void main(){vec3 L=normalize(vec3(0.35,0.5,0.82));float d=clamp(dot(normalize(vN),L),0.,1.);
+    float base=smoothstep(-0.7,0.8,vE);vec3 col=mix(uDeep,uMid,base);
+    float rim=pow(1.-clamp(vN.z,0.,1.),2.3);float crest=smoothstep(0.5,0.95,vE);
+    float thread=smoothstep(0.92,1.0,abs(sin(vUv.y*160.+vE*4.)))*0.10;
+    col=mix(col,uGold,crest*0.5+rim*0.26+thread);col*=(0.46+d*0.8);
+    float vig=smoothstep(1.25,0.12,distance(vUv,vec2(0.4,0.45)));col*=mix(0.7,1.06,vig);
+    gl_FragColor=vec4(col,1.);}`});
+  const mesh=new THREE.Mesh(geo,mat); mesh.rotation.x=-0.62; mesh.rotation.z=0.06; scene.add(mesh);
+  const mo={x:0,y:0,tx:0,ty:0};
+  addEventListener('pointermove',e=>{mo.tx=(e.clientX/innerWidth-.5)*2;mo.ty=(e.clientY/innerHeight-.5)*2;});
+  function size(){const w=canvas.clientWidth,h=canvas.clientHeight;if(canvas.width!==w||canvas.height!==h){renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}}
+  let visible=true;
+  const io=new IntersectionObserver(es=>visible=es[0].isIntersecting,{threshold:0});
+  io.observe(canvas);
+  function loop(t){size();mo.x+=(mo.tx-mo.x)*.05;mo.y+=(mo.ty-mo.y)*.05;
+    u.uTime.value=t*0.0006;u.uMouse.value.set(mo.x,-mo.y);
+    mesh.rotation.z=0.06+mo.x*0.035;mesh.rotation.x=-0.62+mo.y*0.03;
+    if(visible) renderer.render(scene,camera);
+    if(!RM) requestAnimationFrame(loop);}
+  if(RM){size();u.uTime.value=2.;renderer.render(scene,camera);} else requestAnimationFrame(loop);
+  addEventListener('resize',size);
+})();
+</script>
+</body>
+</html>
